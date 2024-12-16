@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1b; /* Fondo en modo oscuro */
+    color: white; /* Color de texto en modo oscuro */
+}
+
+.light-mode {
+    background-color: white; /* Fondo en modo claro */
+    color: black; /* Color de texto en modo claro */
+}
+
+.dark-mode {
+    background-color: #1b1b1b; /* Fondo en modo oscuro */
+    color: white; /* Color de texto en modo oscuro */
+}
+
+h1 {
+    margin-left: 40px; /* Ajusta encabezado el valor según sea necesario */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el formulario y los gráficos */
+    align-items: flex-start; /* Alineación superior */
+    padding: 50px;
+}
+
+.form-section {
+    flex: 0 0 15%; /* Ancho del formulario reducido al 15% */
+    text-align: center; /* Centrar el formulario */
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column; /* Alinear los elementos en columna */
+    align-items: center; /* Centrar los elementos del formulario */
+}
+
+.formulario label {
+    margin: 10px 0 5px; /* Espacio entre etiquetas y campos */
+}
+
+.formulario input {
+    margin-bottom: 15px; /* Espacio entre campos de entrada */
+    padding: 8px; /* Espaciado interno para los campos */
+    width: 80%; /* Ancho del campo de entrada */
+}
+
+.chart-section {
+    flex: 1; /* Toma el 70% del espacio disponible */
+    display: flex;
+    flex-direction: column; /* Mantener la dirección en columna para el título y resultados */
+    align-items: center; /* Centrar el contenido */
+}
+
+.charts-container {
+    display: flex; /* Usar flexbox para alinear los gráficos en fila */
+    justify-content: space-between; /* Espacio entre los gráficos */
+    width: 100%; /* Asegurarse de que el contenedor ocupe todo
+        width: 100%; /* Asegurarse de que el contenedor ocupe todo el ancho */
+        max-width: 1000px; /* Ancho máximo para el contenedor de gráficos */
+        margin-top: 20px; /* Espacio superior opcional */
+    }
+    
+    .chart-item {
+        display: flex;
+        flex-direction: column; /* Alinear el gráfico y el texto en columna */
+        align-items: center; /* Centrar el contenido */
+        flex: 1; /* Hacer que cada gráfico ocupe el mismo espacio */
+        margin: 0 10px; /* Espacio entre los gráficos */
+    }
+    
+    canvas {
+        width: 100%; /* Mantener el 100% del contenedor */
+        height: auto; /* Ajustar la altura de los gráficos automáticamente */
+        max-width: 100%; /* Asegurarse de que no excedan el ancho del contenedor */
+    }
+    
+    #themeToggle {
+        cursor: pointer; /* Cambiar el cursor al pasar sobre el icono */
+        position: fixed; /* Posición fija para que permanezca en la esquina */
+        top: 20px; /* Distancia desde la parte superior */
+        right: 20px; /* Distancia desde la derecha */
+        z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    }
+    
+    #themeToggle img {
+        width: 30px; /* Ajusta el tamaño del icono según sea necesario */
+        height: auto; /* Mantener la proporción del icono */
+    }
