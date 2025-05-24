@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Interés Compuesto</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-mode">
+    <div id="themeToggle" aria-label="Cambiar tema">
+        <img src="icono-sol.png" alt="Icono de Sol" id="icon">
+    </div>
+    <h1 id="header">Calculadora de Interés Compuesto</h1>
+    <div class="container">
+        <div class="form-section">
+            <form id="interestForm" class="formulario">
+                <label for="capital">Capital Inicial ($):</label>
+                <input type="number" id="capital" required>
+                <label for="interes">Tasa de Interés (%):</label>
+                <input type="number" id="interes" step="0.1" required>
+                <label for="años">Períodos:</label> <!-- Cambiado de "Período (Años)" a "Períodos" -->
+                <input type="number" id="años" required>
+                <button type="submit">Calcular</button>
+            </form>
+        </div>
+        <div class="chart-section">
+            <h2>Resultados</h2>
+            <div class="charts-container">
+                <div class="chart-item">
+                    <canvas id="capitalChart" width="600" height="350"></canvas>
+                    <p>Total Capital: <span id="totalCapital">0</span> $</p>
+                </div>
+                <div class="chart-item">
+                    <canvas id="interestChart" width="600" height="350"></canvas>
+                    <p>Total Interés: <span id="totalInteres">0</span> %</p>
+                </div>
+            </div>
+            <!-- Contenedor para la tabla -->
+            <div id="table-section">
+                <h2>Tabla de Crecimiento</h2>
+                <div id="tableContainer"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

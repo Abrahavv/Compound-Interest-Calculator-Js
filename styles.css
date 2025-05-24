@@ -1,0 +1,289 @@
+/* Reset básico para eliminar márgenes y paddings predeterminados y establecer box-sizing global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del cuerpo para definir fuente, espaciado y disposición centrada */
+body {
+    font-family: Arial, sans-serif; /* Fuente predeterminada para el texto */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+    color: #333; /* Color del texto en modo claro */
+    padding: 20px; /* Espaciado interno del cuerpo */
+    min-height: 100vh; /* Altura mínima para cubrir toda la pantalla */
+    display: flex; /* Usar flexbox para centrar contenido */
+    flex-direction: column; /* Organizar elementos en columna */
+    align-items: center; /* Centrar horizontalmente */
+}
+
+/* Estilo para el modo claro, definiendo fondo y color del texto */
+body.light-mode {
+    background-color: #f4f4f4; /* Fondo claro */
+    color: #333; /* Texto oscuro */
+}
+
+/* Estilo para el modo oscuro, definiendo fondo y color del texto */
+body.dark-mode {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+/* Estilo del botón para cambiar entre modo claro y oscuro */
+#themeToggle {
+    position: fixed; /* Fijar en la esquina superior derecha */
+    top: 40px; /* Distancia desde la parte superior */
+    right: 40px; /* Distancia desde la derecha */
+    cursor: pointer; /* Cursor de mano al pasar por encima */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+
+/* Estilo del ícono del botón de cambio de tema */
+#themeToggle img {
+    width: 30px; /* Ancho del ícono */
+    height: 30px; /* Alto del ícono */
+}
+
+/* Estilo del encabezado principal */
+#header {
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 30px; /* Espacio inferior para separar del contenido */
+    font-size: 2rem; /* Tamaño de fuente para el título */
+}
+
+/* Estilo del contenedor principal para limitar el ancho y organizar contenido */
+.container {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    display: flex; /* Usar flexbox para organizar secciones */
+    flex-direction: column; /* Organizar en columna */
+    gap: 20px; /* Espacio entre elementos hijos */
+}
+
+/* Estilo de la sección del formulario */
+.form-section {
+    background-color: inherit; /* Heredar color de fondo del modo (claro/oscuro) */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para destacar */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    max-width: 400px; /* Limitar ancho en pantallas grandes */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+/* Estilo del formulario para organizar campos en columna */
+.formulario {
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Organizar en columna */
+    gap: 15px; /* Espacio entre elementos del formulario */
+}
+
+/* Estilo de las etiquetas del formulario */
+.formulario label {
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilo de los campos de entrada del formulario */
+.formulario input {
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde en modo claro */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    width: 100%; /* Ocupar todo el ancho del contenedor */
+    max-width: 300px; /* Limitar ancho en pantallas grandes */
+}
+
+/* Estilo de los campos de entrada en modo oscuro */
+body.dark-mode .formulario input {
+    background-color: #333; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    border-color: #555; /* Borde en modo oscuro */
+}
+
+/* Estilo del botón del formulario */
+.formulario button {
+    padding: 10px; /* Espaciado interno */
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    font-size: 1rem; /* Tamaño de fuente */
+    max-width: 300px; /* Alinear con los inputs */
+}
+
+/* Efecto hover para el botón del formulario */
+.formulario button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+}
+
+/* Estilo de la sección de resultados y gráficos */
+.chart-section {
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Organizar en columna */
+    gap: 20px; /* Espacio entre elementos */
+}
+
+/* Contenedor de los gráficos */
+.charts-container {
+    display: flex; /* Usar flexbox */
+    flex-wrap: wrap; /* Permitir que los gráficos se envuelvan */
+    gap: 20px; /* Espacio entre gráficos */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+/* Estilo de cada gráfico individual */
+.chart-item {
+    flex: 1; /* Crecer para llenar el espacio disponible */
+    min-width: 300px; /* Ancho mínimo */
+    max-width: 600px; /* Ancho máximo */
+    padding: 10px; /* Espaciado interno */
+    background-color: inherit; /* Heredar color de fondo */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para destacar */
+    text-align: center; /* Centrar contenido */
+}
+
+/* Estilo del texto debajo de los gráficos */
+.chart-item p {
+    margin-top: 10px; /* Espacio superior */
+    font-size: 1.1rem; /* Tamaño de fuente */
+}
+
+/* Estilo de la sección de la tabla */
+#table-section {
+    width: 100%; /* Ocupar todo el ancho */
+    overflow-x: auto; /* Permitir desplazamiento horizontal en móviles */
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%; /* Ocupar todo el ancho */
+    border-collapse: collapse; /* Colapsar bordes para un diseño limpio */
+    margin-top: 10px; /* Espacio superior */
+    background-color: inherit; /* Heredar color de fondo */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para destacar */
+}
+
+/* Estilo de las celdas de la tabla */
+th, td {
+    padding: 12px; /* Espaciado interno */
+    text-align: right; /* Alinear texto a la derecha */
+    border-bottom: 1px solid #ddd; /* Borde inferior en modo claro */
+}
+
+/* Estilo de los bordes de la tabla en modo oscuro */
+body.dark-mode th, body.dark-mode td {
+    border-bottom: 1px solid #555; /* Borde inferior en modo oscuro */
+}
+
+/* Estilo de los encabezados de la tabla */
+th {
+    background-color: #555; /* Fondo azul */
+    color: white; /* Texto blanco */
+}
+
+/* Estilo de los encabezados en modo oscuro */
+body.dark-mode th {
+    background-color: #555; /* Fondo azul más oscuro */
+}
+
+/* Estilo de las celdas de datos */
+td {
+    background-color: inherit; /* Heredar color de fondo */
+}
+
+/* Media queries para dispositivos móviles (pantallas ≤ 768px) */
+@media (max-width: 768px) {
+    /* Ajustar el espaciado del cuerpo */
+    body {
+        padding: 10px; /* Reducir padding */
+    }
+
+    /* Ajustar posición del botón de cambio de tema */
+    #themeToggle {
+        top: 20px; /* Reducir distancia desde la parte superior */
+        right: 20px; /* Reducir distancia desde la derecha */
+    }
+
+    /* Ajustar tamaño del encabezado */
+    #header {
+        font-size: 1.5rem; /* Reducir tamaño de fuente */
+        margin-bottom: 20px; /* Reducir margen inferior */
+    }
+
+    /* Ajustar la sección del formulario */
+    .form-section {
+        padding: 15px; /* Reducir padding */
+        max-width: 100%; /* Ocupar todo el ancho */
+    }
+
+    /* Ajustar campos y botón del formulario */
+    .formulario input, .formulario button {
+        font-size: 0.9rem; /* Reducir tamaño de fuente */
+        max-width: 100%; /* Ocupar todo el ancho */
+    }
+
+    /* Apilar gráficos en columna */
+    .charts-container {
+        flex-direction: column; /* Organizar en columna */
+        align-items: center; /* Centrar horizontalmente */
+    }
+
+    /* Ajustar tamaño de los gráficos */
+    .chart-item {
+        min-width: 100%; /* Ocupar todo el ancho */
+        max-width: 100%; /* Limitar al ancho de la pantalla */
+    }
+
+    /* Ajustar lienzos de los gráficos */
+    .chart-item canvas {
+        width: 100% !important; /* Ocupar todo el ancho */
+        height: auto !important; /* Ajustar altura automáticamente */
+    }
+
+    /* Reducir tamaño de fuente de la tabla */
+    table {
+        font-size: 0.85rem; /* Tamaño de fuente más pequeño */
+    }
+
+    /* Reducir padding de las celdas */
+    th, td {
+        padding: 8px; /* Reducir espaciado */
+    }
+}
+
+/* Media queries para dispositivos móviles pequeños (pantallas ≤ 480px) */
+@media (max-width: 480px) {
+    /* Ajustar tamaño del encabezado */
+    #header {
+        font-size: 1.2rem; /* Reducir aún más el tamaño */
+    }
+
+    /* Ajustar posición del botón de cambio de tema */
+    #themeToggle {
+        top: 15px; /* Reducir distancia desde la parte superior */
+        right: 15px; /* Reducir distancia desde la derecha */
+    }
+
+    /* Ajustar campos y botón del formulario */
+    .formulario input, .formulario button {
+        font-size: 0.8rem; /* Reducir tamaño de fuente */
+        padding: 8px; /* Reducir espaciado */
+    }
+
+    /* Reducir padding de los gráficos */
+    .chart-item {
+        padding: 5px; /* Reducir espaciado */
+    }
+
+    /* Reducir tamaño de fuente de la tabla */
+    table {
+        font-size: 0.75rem; /* Tamaño de fuente más pequeño */
+    }
+
+    /* Reducir padding de las celdas */
+    th, td {
+        padding: 6px; /* Reducir espaciado */
+    }
+}
